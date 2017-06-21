@@ -1,0 +1,20 @@
+<p-dialog header="角色管理" [visible]="true" (visibleChange)="onVisibleChange($event)" modal="modal" width="700">
+  <form class="form-horizontal" #roleForm="ngForm">
+    <div class="form-group col-sm-12" [class.has-error]="formErrors.name">
+      <label for="name" class="col-sm-3 control-label">角色名称</label>
+      <div class="control-box col-sm-9" [pTooltip]="formErrors.name" tooltipPosition="right" 
+        appendTo="target" tooltipStyleClass="error-tooltip">
+        <input type="text" class="form-control" id="name" name="name" placeholder=""
+          required minlength="2" maxlength="10" [(ngModel)]="model.name">
+      </div>
+    </div>
+  </form>
+  <p-footer>
+    <div class="clearfix text-right">
+      <button type="button" pButton icon="fa-close" class="ui-button-danger" 
+        (click)="close($event)" label="取消"></button>
+      <button type="button" pButton icon="fa-check" class="ui-button-primary" 
+        (click)="submit($event)" label="提交" [disabled]="pending || !roleForm.form.valid"></button>
+    </div>
+  </p-footer>
+</p-dialog>

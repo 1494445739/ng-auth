@@ -1,1 +1,1 @@
-"# ng2-auth" 
+# ng2-auth
