@@ -1,0 +1,26 @@
+<p-dialog header="资源分配" [visible]="true" (visibleChange)="onVisibleChange($event)" modal="modal" width="700">
+  <form class="form-horizontal">
+    <div class="form-group col-sm-12">
+      <label for="remark" class="col-sm-3 control-label">选择资源</label>
+      <div class="control-box col-sm-9">
+        <p-tree [style]="{'height': '200px', 'width': '100%'}" [value]="resourceNodes" #resourceTree>
+            <ng-template let-node pTemplate="default">
+              <div class="node-row">
+                <span>{{node.label}}</span>
+                <p-checkbox [name]="'node'+node.data.id" binary="true" [(ngModel)]="node.data.isSelected"
+                  (onChange)="onNodeSelectChange($event, node)"></p-checkbox>
+              </div>
+          </ng-template>
+        </p-tree>
+      </div>
+    </div>
+  </form>
+  <p-footer>
+    <div class="clearfix text-right">
+      <button type="button" pButton icon="fa-close" class="ui-button-danger" 
+        (click)="close($event)" label="取消"></button>
+      <button type="button" pButton icon="fa-check" class="ui-button-primary" 
+        (click)="submit($event)" label="提交" [disabled]="pending"></button>
+    </div>
+  </p-footer>
+</p-dialog>
