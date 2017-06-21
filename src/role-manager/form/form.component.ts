@@ -7,7 +7,7 @@ import { clone } from 'lodash';
 
 import { RoleManagerService } from '../role-manager.service';
 import { Role } from '../../models/models';
-import { Alert, Confirm, BaseFormComponent } from '@tzg/web-shared';
+import { Alert, Confirm, BaseFormComponent } from '@tzg/ng-shared';
 
 @Component({
   selector: 'app-form',

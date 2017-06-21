@@ -6,7 +6,7 @@ import { clone } from 'lodash';
 import { RoleManagerService } from '../../role-manager/role-manager.service';
 import { UserManagerService } from '../user-manager.service';
 import { Role, Authorization } from '../../models/models';
-import { Alert, Confirm } from '@tzg/web-shared';
+import { Alert, Confirm } from '@tzg/ng-shared';
 
 @Component({
   selector: 'app-authorization',

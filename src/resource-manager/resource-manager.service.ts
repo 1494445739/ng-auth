@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { BaseService, PageQuery } from '@tzg/web-shared';
+import { BaseService, PageQuery } from '@tzg/ng-shared';
 import { Resource } from '../models/models';
 
 @Injectable()

@@ -1,7 +1,7 @@
 {
-  "name": "@tzg/web-auth",
-  "version": "1.0.4",
-  "description": "web-auth module",
+  "name": "@tzg/ng-auth",
+  "version": "1.0.0",
+  "description": "angular auth node module",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.js",
   "types": "dist/index.d.ts",

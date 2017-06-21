@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserManagerService } from '../user-manager.service';
-import { Alert, Confirm, PageQuery, BaseListComponent } from '@tzg/web-shared';
+import { Alert, Confirm, PageQuery, BaseListComponent } from '@tzg/ng-shared';
 import { User } from '../../models/models';
 
 export interface UserQuery extends PageQuery {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { BaseService, PageQuery, Result } from '@tzg/web-shared';
+import { BaseService, PageQuery, Result } from '@tzg/ng-shared';
 import { User, Role, Authorization } from '../models/models';
 import { Observable } from 'rxjs/Rx';
 

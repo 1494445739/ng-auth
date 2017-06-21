@@ -7,7 +7,7 @@ import { clone } from 'lodash';
 
 import { UserManagerService } from '../user-manager.service';
 import { User } from '../../models/models';
-import { Alert, Confirm, BaseFormComponent } from '@tzg/web-shared';
+import { Alert, Confirm, BaseFormComponent } from '@tzg/ng-shared';
 
 @Component({
   selector: 'app-form',

@@ -7,7 +7,7 @@ import { clone } from 'lodash';
 import { RoleManagerService } from '../role-manager.service';
 import { ResourceManagerService } from '../../resource-manager/resource-manager.service';
 import { Resource, Permission } from '../../models/models';
-import { Alert, Confirm } from '@tzg/web-shared';
+import { Alert, Confirm } from '@tzg/ng-shared';
 
 @Component({
   selector: 'app-permission',

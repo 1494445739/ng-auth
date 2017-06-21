@@ -1,4 +1,4 @@
-import { DataModel } from '@tzg/web-shared';
+import { DataModel } from '@tzg/ng-shared';
 
 /**
  * 角色

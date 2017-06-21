@@ -7,7 +7,7 @@ import { clone } from 'lodash';
 
 import { ResourceManagerService } from '../resource-manager.service';
 import { Resource } from '../../models/models';
-import { Alert, Confirm, BaseFormComponent } from '@tzg/web-shared';
+import { Alert, Confirm, BaseFormComponent } from '@tzg/ng-shared';
 
 @Component({
   selector: 'app-form',

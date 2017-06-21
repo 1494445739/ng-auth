@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RoleManagerService } from '../role-manager.service';
 import { Role } from '../../models/models';
-import {  Alert, Confirm, BaseListComponent, PageQuery } from '@tzg/web-shared';
+import {  Alert, Confirm, BaseListComponent, PageQuery } from '@tzg/ng-shared';
 
 export interface RoleQuery extends PageQuery {
   name: string;
