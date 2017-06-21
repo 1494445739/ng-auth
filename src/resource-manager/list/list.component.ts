@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TreeNode } from 'primeng/primeng';
-import { Alert, Confirm, Query, BaseListComponent } from '@tzg/web-shared';
+import { Alert, Confirm, Query, BaseListComponent } from '@tzg/ng-shared';
 import { ResourceManagerService } from '../resource-manager.service';
 import { Resource } from '../../models/models';
 
