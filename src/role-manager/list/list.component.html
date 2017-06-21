@@ -1,0 +1,38 @@
+<p-panel header="角色管理" [toggleable]="true" [style]="{'margin-bottom':'20px', 'margin-top': '20px'}">
+  <form class="form-inline" #queryForm="ngForm" (ngSubmit)="search($event)">
+    <div class="form-group">
+      <label for="name">名称</label>
+      <input type="text" name="name" class="form-control" [(ngModel)]="query.name">
+    </div>
+    <div class="form-group">
+      <button type="submit" pButton icon="fa-search" class="ui-button-success" label="搜索"></button>
+    </div>
+    <div class="form-group pull-right">
+      <button type="button" pButton icon="fa-plus" class="ui-button-primary" 
+        routerLink="./form" label="新增角色"></button>
+    </div>
+  </form>
+</p-panel>
+
+<p-dataTable [value]="list" emptyMessage="暂无数据">
+  <p-column field="name" header="名称"></p-column>
+  <p-column field="cdt" header="创建时间">
+    <ng-template let-item="rowData" pTemplate="body">
+      {{item.cdt | date:'yyyy-MM-dd HH:mm'}}
+    </ng-template>
+  </p-column>
+  <p-column header="操作">
+    <ng-template let-item="rowData" pTemplate="body">
+      <button type="button" pButton icon="fa-trash" class="ui-button-danger" 
+        (click)="delete(item)" label="删除"></button>
+      <button type="button" pButton icon="fa-pencil" class="ui-button-default" 
+        [routerLink]="['form', { id: item.id }]" label="编辑"></button>
+      <button type="button" pButton icon="fa-pencil" class="ui-button-success" 
+        [routerLink]="['permission', { id: item.id }]" label="分配资源"></button>
+    </ng-template>
+  </p-column>
+</p-dataTable>
+
+<p-paginator [rows]="query.pageSize" [totalRecords]="itemsCount" pageLinkSize="7" (onPageChange)="pageChange($event)"></p-paginator>
+
+<router-outlet></router-outlet>

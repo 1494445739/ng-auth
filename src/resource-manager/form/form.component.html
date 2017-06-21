@@ -1,0 +1,41 @@
+<p-dialog header="资源管理" [visible]="true" (visibleChange)="onVisibleChange($event)" modal="modal" width="700">
+  <form class="form-horizontal" #resourceForm="ngForm">
+    <div class="form-group col-sm-12" [class.has-error]="formErrors.name">
+      <label for="name" class="col-sm-3 control-label">资源名称</label>
+      <div class="control-box col-sm-9" [pTooltip]="formErrors.name" tooltipPosition="right" 
+        appendTo="target" tooltipStyleClass="error-tooltip">
+        <input type="text" class="form-control" id="name" name="name" placeholder=""
+          required minlength="2" maxlength="20" [(ngModel)]="model.name">
+      </div>
+    </div>
+    <div class="form-group col-sm-12">
+      <label for="seq" class="col-sm-3 control-label">排序值</label>
+      <div class="control-box col-sm-9">
+        <input type="number" class="form-control" id="seq" name="seq" placeholder=""
+          required [(ngModel)]="model.seq">
+      </div>
+    </div>
+    <div class="form-group col-sm-12" *ngIf="model.pid !== 0">
+      <label for="category" class="col-sm-3 control-label">资源类型</label>
+      <div class="control-box col-sm-9">
+        <p-selectButton name="category" [options]="[{label: '菜单权限', value: 'm'},{label: '操作权限', value: 'a'}]" 
+          [(ngModel)]="model.category"></p-selectButton>
+      </div>
+    </div>
+    <div class="form-group col-sm-12" [class.has-error]="formErrors.uri">
+      <label for="uri" class="col-sm-3 control-label">资源地址</label>
+      <div class="control-box col-sm-9" [pTooltip]="formErrors.uri" tooltipPosition="right" 
+        appendTo="target" tooltipStyleClass="error-tooltip">
+        <input type="text" class="form-control" id="uri" name="uri" placeholder=""
+          required [(ngModel)]="model.uri">
+      </div>
+    </div>
+  </form>
+  <p-footer>
+    <div class="clearfix text-right">
+      <button type="button" pButton icon="fa-close" class="ui-button-danger" (click)="close($event)" label="取消"></button>
+      <button type="button" pButton icon="fa-check" class="ui-button-primary" 
+        (click)="submit($event)" label="提交" [disabled]="pending || !resourceForm.form.valid"></button>
+    </div>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,17 @@
+<p-dialog header="角色分配" [visible]="true" (visibleChange)="onVisibleChange($event)" modal="modal" width="700">
+  <p-dataTable [value]="roles" [(selection)]="selectedRoles" dataKey="id" scrollable="true" scrollHeight="300px">
+      <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+      <p-column field="name" header="角色名称"></p-column>
+      <p-footer>
+        <div style="text-align: left">已选择{{selectedRoles.length}}个角色</div>
+      </p-footer>
+  </p-dataTable>
+  <p-footer>
+    <div class="clearfix text-right">
+      <button type="button" pButton icon="fa-close" class="ui-button-danger" 
+        (click)="close($event)" label="取消"></button>
+      <button type="button" pButton icon="fa-check" class="ui-button-primary" 
+        (click)="submit($event)" label="提交" [disabled]="pending"></button>
+    </div>
+  </p-footer>
+</p-dialog>
